@@ -85,7 +85,11 @@ public class UserDetailFragment extends Fragment implements UserDetailContract.V
         tvFullname.setText(user.getFullname());
         tvVunetid.setText(user.getVunetId());
         tvFaculty.setText(user.getFaculty());
-        cbAdmin.setChecked(user.isAdmin());
+        if (user.isAdmin()) {
+            cbAdmin.setChecked(true);
+        } else {
+            cbAdmin.setVisibility(View.GONE);
+        }
     }
 
     @Override

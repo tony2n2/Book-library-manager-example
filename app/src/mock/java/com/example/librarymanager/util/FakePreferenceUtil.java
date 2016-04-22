@@ -15,7 +15,7 @@ public class FakePreferenceUtil implements SharedPrefApi{
 
     @Override
     public boolean hasKey(String key) {
-        return false;
+        return true;
     }
 
     @Override

@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class ImageFileImpl implements ImageFile {
+public class ImageFileImpl implements ImageFileApi {
 
     File mImageFile;
 
