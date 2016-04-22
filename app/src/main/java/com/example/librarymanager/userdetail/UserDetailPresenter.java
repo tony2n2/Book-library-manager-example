@@ -1,5 +1,7 @@
 package com.example.librarymanager.userdetail;
 
+import android.view.View;
+
 import com.example.librarymanager.R;
 import com.example.librarymanager.data.DataContract;
 import com.example.librarymanager.data.User;
@@ -22,18 +24,16 @@ public class UserDetailPresenter implements UserDetailContract.UserActionListene
 
     @Override
     public void initUi(String requestedVunetid) {
-        String mLoggedVunetid = mAppPrefs.getString(PreferenceUtil.APP_STATES_CURRENT_USER,"");
+        String mLoggedVunetid = mAppPrefs.getString(PreferenceUtil.APP_STATES_CURRENT_USER, "");
         String superAdmin = mAppPrefs.getString(PreferenceUtil.APP_STATES_SUPER_ADMIN_USERNAME, "");
 
         User user = mRepository.getUser(requestedVunetid);
         mView.showUser(user);
-        if (user.isAdmin()) {
-            mView.setBorrowedButtonVisibility(false);
-        }
+        mView.setBorrowedButtonVisibility(!user.isAdmin());
 
-        if (user.getVunetId().equals(superAdmin) || mLoggedVunetid.equals(requestedVunetid)) {
-            mView.setEditAndDeleteButtonVisibility(false);
-        }
+        boolean enableEditAndDelete = !user.getVunetId().equals(superAdmin) &&
+                !mLoggedVunetid.equals(requestedVunetid);
+        mView.setEditAndDeleteButtonVisibility(enableEditAndDelete);
     }
 
     @Override
