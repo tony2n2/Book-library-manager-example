@@ -80,7 +80,8 @@ public abstract class BaseDrawerActivity extends BaseActivity
             nv.removeHeaderView(nv.getHeaderView(0));
 
             View headerView = LayoutInflater.from(getApplication()).inflate(
-                    R.layout.nav_header_main, (DrawerLayout) findViewById(R.id.drawer_layout), false);
+                    R.layout.nav_header_main,
+                    (DrawerLayout) findViewById(R.id.drawer_layout), false);
             nv.addHeaderView(headerView);
 
             ((TextView) headerView.findViewById(R.id.tv_headerName)).setText(mVunetid);
@@ -170,7 +171,8 @@ public abstract class BaseDrawerActivity extends BaseActivity
             }
         });
 
-        MenuItemCompat.OnActionExpandListener expandListener = new MenuItemCompat.OnActionExpandListener() {
+        MenuItemCompat.OnActionExpandListener expandListener =
+                new MenuItemCompat.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
                 return true;

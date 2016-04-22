@@ -142,7 +142,7 @@ public class UserDetailFragment extends Fragment implements UserDetailContract.V
         final TextView tvFaculty = (TextView) getActivity().findViewById(R.id.tv_faculty);
 
         final EditText etFullname = (EditText) getActivity().findViewById(R.id.et_fullname);
-        final EditText etVunetid = (EditText) getActivity().findViewById(R.id.et_vunetid);
+        final TextView etVunetid = (TextView) getActivity().findViewById(R.id.et_vunetid);
         final EditText etFaculty = (EditText) getActivity().findViewById(R.id.et_faculty);
         final EditText etPassword = (EditText) getActivity().findViewById(R.id.et_password);
         final EditText etConfirmPassword = (EditText) getActivity().

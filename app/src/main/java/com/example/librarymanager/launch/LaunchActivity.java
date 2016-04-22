@@ -39,7 +39,8 @@ public class LaunchActivity extends Activity implements OnClickListener {
 
         if (!adminPasswdIsSet()) {
             intent = new Intent(this, SetPasswordActivity.class);
-            intent.putExtra(SetPasswordFragment.ARG_ACTION_TYPE, SetPasswordFragment.ACTION_INITIALIZATION);
+            intent.putExtra(SetPasswordFragment.ARG_ACTION_TYPE,
+                    SetPasswordFragment.ACTION_INITIALIZATION);
         } else if (loggedIn()) {
             intent = new Intent(this, BooksActivity.class);
         } else {

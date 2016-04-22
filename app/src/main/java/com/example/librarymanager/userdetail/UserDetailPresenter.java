@@ -82,6 +82,10 @@ public class UserDetailPresenter implements UserDetailContract.UserActionListene
 
     @Override
     public void deleteUserConfirmed(String vunetid) {
+        if (mRepository.getBooksBorrowedBy(vunetid).moveToFirst()) {
+            mView.showMessage(R.string.delete_book_failed_borrowing);
+            return;
+        }
         if (mRepository.deleteUser(vunetid)) {
             mView.showMessage(R.string.deleted_message);
             mView.finish();
