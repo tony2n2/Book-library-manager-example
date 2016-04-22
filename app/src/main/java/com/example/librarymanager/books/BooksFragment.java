@@ -230,8 +230,10 @@ public class BooksFragment extends Fragment implements BooksContract.View {
             if (!cursor.isNull(uriColumn)) {
                 String imagePath = cursor.getString(uriColumn);
                 imageData = mUserActionListener.getThumbnail(imagePath);
+                ivImage.setImageBitmap(imageData);
+                ivImage.setBackground(null);
             }
-            ivImage.setImageBitmap(imageData);
+
             tvBookName.setText(bookName);
         }
     }

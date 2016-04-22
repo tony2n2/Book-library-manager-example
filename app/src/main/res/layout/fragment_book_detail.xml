@@ -22,7 +22,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/book"
                 android:contentDescription="@string/thumbnail_description"
-                android:scaleType="centerCrop" />
+                android:scaleType="fitCenter" />
 
             <ViewAnimator
                 android:id="@+id/va_animator"

@@ -170,6 +170,7 @@ public class BookDetailFragment extends Fragment implements BookDetailContract.V
     @Override
     public void setThumbnail(Bitmap imageData) {
         ivImage.setImageBitmap(imageData);
+        ivImage.setBackground(null);
     }
 
     @Override

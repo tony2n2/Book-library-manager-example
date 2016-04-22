@@ -133,6 +133,7 @@ public class AddBookFragment extends Fragment implements AddBookContract.View {
     public void showThumbnail(Bitmap thumbnail) {
         ImageView ivThumbnail = (ImageView) getActivity().findViewById(R.id.iv_thumbnail);
         ivThumbnail.setImageBitmap(thumbnail);
+        ivThumbnail.setBackground(null);
     }
 
     @Override

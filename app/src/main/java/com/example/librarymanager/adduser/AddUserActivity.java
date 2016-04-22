@@ -14,7 +14,7 @@ public class AddUserActivity extends BaseActivity {
 
         if (getSupportActionBar() != null) {
             ActionBar actionBar = getSupportActionBar();
-            actionBar.setTitle(R.string.toolbar_title_addbook);
+            actionBar.setTitle(R.string.toolbar_title_adduser);
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setDisplayShowHomeEnabled(true);
         }
